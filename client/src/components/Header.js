@@ -40,7 +40,7 @@ const Header = () => {
                             <NavLink to="/contact" className="text-decoration-none" style={common}>Contact</NavLink>
                         </div>
                         <div>
-                            <Button variant="danger">YouTube</Button>
+                            <Button variant="danger">Resume</Button>
                         </div>
 
                     </Nav>
@@ -56,11 +56,23 @@ const Header = () => {
                             <NavLink to="/about" className="text-decoration-none  mb-2" style={common}>About</NavLink>
                             <NavLink to="/playlist" className="text-decoration-none  mb-2" style={common}>Project</NavLink>
                             <NavLink to="/contact" className="text-decoration-none  mb-2" style={common}>Contact</NavLink>
-                             <div>
-                            <Button variant="danger" 
-          style={{ letterSpacing: "1px", border: "none", borderRadius: 4, background: "#6c63ff" }}
-          onClick={() => window.location.assign("https://www.youtube.com/channel/UCUfxfD4PlpC1f5SMdHqvs0A")}>YouTube </Button>
-                            </div> 
+                            <div className="btnDiv">
+     <button id="downloadBtn" value="download">Download</button>
+</div>
+const onButtonClick = () => {
+        // using Java Script method to get PDF file
+        fetch('../public.pdf').then(response => {
+            response.blob().then(blob => {
+                // Creating new object of PDF file
+                const fileURL = window.URL.createObjectURL(blob);
+                // Setting various property values
+                let alink = document.createElement('a');
+                alink.href = fileURL;
+                alink.download = '../public/Resum.pdf';
+                alink.click();
+            })
+        })
+    }
                         </div>
                     </Offcanvas.Body>
                 </Offcanvas>
