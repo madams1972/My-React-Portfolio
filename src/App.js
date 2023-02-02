@@ -8,7 +8,8 @@ import About from "./components/About"
 import Contact from "./components/Contact"
 import Playlist from "./components/Playlist"
 import Footer from "./components/Footer"
-import {Routes,Route} from "react-router-dom"
+import {HashRouter as Router} from “react-router-dom”
+
 
 function App() {
   return (
