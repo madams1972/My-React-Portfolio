@@ -8,19 +8,16 @@ import About from "./components/About"
 import Contact from "./components/Contact"
 import Playlist from "./components/Playlist"
 import Footer from "./components/Footer"
-import {HashRouter as Router} from “react-router-dom”
 
 
 function App() {
   return (
    <>
-    <Header />
-    <Routes>
-      <Route path='/' element={<Home />} />
-      <Route path='/about' element={<About />} />
-      <Route path='/contact' element={<Contact />} />
-      <Route path='/playlist' element={<Playlist />} />
-    </Routes>
+    <Header />      
+    <Home />
+      <About />
+      <Contact />
+      <Playlist />
     <Footer />
    </>
   );

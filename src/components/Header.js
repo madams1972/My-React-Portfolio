@@ -4,7 +4,6 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Button from 'react-bootstrap/Button';
 import Offcanvas from 'react-bootstrap/Offcanvas';
-import { NavLink } from 'react-router-dom';
 import "./Header.css";
 
 
@@ -26,18 +25,18 @@ const Header = () => {
             <Navbar bg="light" variant="light">
                 <Container>
                 <div className="hamburgur">
-                        <i class="fa fa-bars inner" onClick={handleShow} aria-hidden="true" style={{cursor:"pointer"}}></i>
+                        <i className="fa fa-bars inner" onClick={handleShow} aria-hidden="true" style={{cursor:"pointer"}}></i>
                         <h2 className='mt-2 h2_right' style={{ color: "#6C63FF" }}>
-                            <NavLink to="/" style={{ textDecoration: "none" }}>Malissa Adams</NavLink>
+                        <a href ="#" >Malissa Adams</a>
                         </h2>
                     </div>
 
                     <Nav className="nav">
                         <div className='mt-2'>
-                            <NavLink to="/" className="text-decoration-none" style={common}>Home</NavLink>
-                            <NavLink to="/about" className="text-decoration-none" style={common}>About</NavLink>
-                            <NavLink to="playlist" className="text-decoration-none" style={common}>Projects</NavLink>
-                            <NavLink to="/contact" className="text-decoration-none" style={common}>Contact</NavLink>
+                            <a href ="#" className="text-decoration-none" style={common}>Home</a>
+                            <a href ="#" className="text-decoration-none" style={common}>About</a>
+                            <a href ="#" className="text-decoration-none" style={common}>Projects</a>
+                            <a href ="#" className="text-decoration-none" style={common}>Contact</a>
                         </div>
                         <div>
                             <Button variant="danger">Resume</Button>
@@ -52,27 +51,14 @@ const Header = () => {
                     </Offcanvas.Header>
                     <Offcanvas.Body>
                         <div className='side_nav' onClick={() => setShow(false)}>
-                            <NavLink to="/" className="text-decoration-none  mb-2" style={common}>Home</NavLink>
-                            <NavLink to="/about" className="text-decoration-none  mb-2" style={common}>About</NavLink>
-                            <NavLink to="/playlist" className="text-decoration-none  mb-2" style={common}>Project</NavLink>
-                            <NavLink to="/contact" className="text-decoration-none  mb-2" style={common}>Contact</NavLink>
+                            <a href ="#" className="text-decoration-none  mb-2" style={common}>Home</a>
+                            <a href ="#" className="text-decoration-none  mb-2" style={common}>About</a>
+                            <a href ="#" className="text-decoration-none  mb-2" style={common}>Project</a>
+                            <a href ="#" className="text-decoration-none  mb-2" style={common}>Contact</a>
                             <div className="btnDiv">
      <button id="downloadBtn" value="download">Download</button>
 </div>
-const onButtonClick = () => {
-        // using Java Script method to get PDF file
-        fetch('../public.pdf').then(response => {
-            response.blob().then(blob => {
-                // Creating new object of PDF file
-                const fileURL = window.URL.createObjectURL(blob);
-                // Setting various property values
-                let alink = document.createElement('a');
-                alink.href = fileURL;
-                alink.download = '../public/Resum.pdf';
-                alink.click();
-            })
-        })
-    }
+
                         </div>
                     </Offcanvas.Body>
                 </Offcanvas>
