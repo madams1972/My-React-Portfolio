@@ -23,7 +23,14 @@ const projects = [
     github: 'https://github.com/madams1972/My-WebDesign-Portfolio',
     link: 'https://madams1972.github.io/My-WebDesign-Portfolio/',
   },
-  
+  {
+    title: 'JJAMMSTACK',
+    image: './images/portfolio.png',
+    description: "For Group Projrct 3: We created a website for web developers!!",
+    tools: ['HTML', 'JavaScript', 'CSS', "MERNG"],
+    github: 'https://github.com/jaqsentanner/jjammstack/',
+    link: 'https://jjammstack.herokuapp.com/',
+  },
 ];
 
 export default projects;
